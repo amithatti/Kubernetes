@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: flipkart
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: deployment
+  template:
+    metadata:
+      name: amitlogin
+      labels:
+        name: deployment
+    spec:
+      containers:
+        - name: login
+          image: centos
+          command: ["/bin/bash", "-c", "while true; do echo amitlogin; sleep 2; done"]
+             
